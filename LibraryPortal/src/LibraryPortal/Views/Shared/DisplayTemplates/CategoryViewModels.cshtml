@@ -1,0 +1,22 @@
+﻿@model LibraryPortal.ViewModels.CategoryViewModels
+
+@foreach (var m in Model.Cats)
+{
+    <div class="col-md-3 col-sm-6 col-xs-10" >
+        <div class="panel" style="border:solid 1px gray; margin: 20px">
+            <div class="panel-heading">
+                <figure>
+                    <figcaption style="font-size:30px;font-weight:bold">@m.Name</figcaption>
+                    <img src="~/img/@m.ImgName" alt="Alternate Text" style="height:140px; width:auto"/>                   
+                </figure>                
+            </div>
+            <a asp-controller="Book" asp-action="Index" asp-route-id="@m.Id">
+                <div class="panel-footer">
+                    <span class="pull-left">@m.Count</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+}

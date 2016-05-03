@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/lib/Font-Awesome/css/font-awesome.css" rel="stylesheet" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link href="~/lib/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" />
+    </environment>
+
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div  class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand">Library Portal</a>
+            </div>
+            <div  class="collapse navbar-collapse">
+                <ul  class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index">Index</a></li>                    
+                    <li><a asp-controller="Book" asp-action="Create">New</a></li>
+                    <li><a asp-controller="Book" asp-action="Index" asp-route-id="0">Books</a></li>                    
+                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About</a></li>
+                </ul>
+            </div>     
+                
+        </div>
+    </div>
+    <div>
+        <hr />
+        <hr />
+        <hr />
+
+            @RenderBody()
+            <hr />
+            <div class="col-xs-10">
+                <footer>
+                    <p>&copy; 2016 - Library Portal</p>
+                </footer>
+            </div>
+            
+    </div>
+
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/js/collapse.js"></script>
+
+    @RenderSection("Scripts", false)
+
+</body>
+</html>
