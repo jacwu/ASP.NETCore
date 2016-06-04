@@ -1,4 +1,4 @@
-### ASP.NET Core Demo Sample
+### ASP.NET Core Demo Sample based on RC1
 Demo sample to implement book management portal based on MVC6 and Angular
 * ASP.NET Core
 * Entity Framework 7
